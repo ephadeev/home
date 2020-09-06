@@ -9,6 +9,8 @@ const del = require('del');
 const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
 const sync = require('browser-sync').create();
+const media = require('gulp-group-css-media-queries');
+const imageMin = require('gulp-imagemin');
 
 function html() {
     return src('src/**.html')
@@ -24,12 +26,24 @@ function html() {
 function scss() {
     return src('src/scss/**.scss')
         .pipe(sass())
+        .pipe(media())
         .pipe(autoprefixer({
             cascade: false
         }))
         .pipe(csso())
         .pipe(concat('index.css'))
         .pipe(dest('docs/css/'))
+}
+
+function images() {
+    return src('src/img/**.png')
+        .pipe(imageMin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            interlaced: true,
+            optimizationLevel: 3 // 0 to 7
+        }))
+        .pipe(dest('docs/img/'))
 }
 
 function clear() {
@@ -43,6 +57,7 @@ function serve() {
 
     watch('src/**.html', series(html)).on('change', sync.reload);
     watch('src/scss/**.scss', series(scss)).on('change', sync.reload);
+    watch('src/img/**.png', series(images)).on('change', sync.reload);
 }
 
 function icons() {
@@ -50,6 +65,6 @@ function icons() {
         .pipe(dest('./docs/webfonts/'));
 }
 
-exports.build = series(clear, scss, html);
-exports.serve = series(clear, icons, scss, html, serve);
+exports.build = series(clear, scss, html, images);
+exports.serve = series(clear, icons, scss, html, images, serve);
 exports.clear = clear;

@@ -27,5 +27,9 @@
     "gulp-file-include": "^2.2.2",
     "gulp-htmlmin": "^5.0.1",
     "gulp-sass": "^4.1.0"
+  },
+  "devDependencies": {
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-imagemin": "^7.1.0"
   }
 }
