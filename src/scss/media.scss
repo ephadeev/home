@@ -1,0 +1,47 @@
+/* 1000 - 1200 */
+@media (max-width: 1200px) {
+  .header {
+    .header__container {
+      width: 360px;
+    }
+  }
+
+  .channels {
+    width: 360px;
+  }
+  .channel {
+    .channel__info {
+      width: calc(360px - 10px - 46px - 12px - 11px);
+    }
+  }
+}
+
+/* 800 - 1000 */
+@media (max-width: 1000px) {
+  .header {
+    .header__container {
+      width: 280px;
+    }
+  }
+
+  .channels {
+    width: 280px;
+  }
+  .channel {
+    .channel__info {
+      width: calc(280px - 10px - 46px - 12px - 11px);
+    }
+  }
+
+}
+
+/* 576 - 800 */
+@media (max-width: 800px) {
+
+
+}
+
+/* 0 - 576 */
+@media (max-width: 576px) {
+
+}
