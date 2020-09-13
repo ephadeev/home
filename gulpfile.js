@@ -12,15 +12,23 @@ const sync = require('browser-sync').create();
 const media = require('gulp-group-css-media-queries');
 const imageMin = require('gulp-imagemin');
 
-function html() {
-    return src('src/**.html')
-        .pipe(include({
-            prefix: '@@'
-        }))
-        .pipe(htmlmin({
-            collapseWhitespace: true
-        }))
-        .pipe(dest('docs/'))
+function clear() {
+    return del(['./docs/'])
+}
+
+function icons() {
+    return src('node_modules/@fortawesome/fontawesome-free/webfonts/*')
+        .pipe(dest('./docs/webfonts/'));
+}
+
+function fonts() {
+    return src('src/fonts/*')
+        .pipe(dest('docs/webfonts/'));
+}
+
+function js() {
+    return src('src/script.js')
+        .pipe(dest('docs/'));
 }
 
 function scss() {
@@ -35,8 +43,19 @@ function scss() {
         .pipe(dest('docs/css/'))
 }
 
+function html() {
+    return src('src/**.html')
+        .pipe(include({
+            prefix: '@@'
+        }))
+        .pipe(htmlmin({
+            collapseWhitespace: true
+        }))
+        .pipe(dest('docs/'))
+}
+
 function images() {
-    return src('src/img/**.png')
+    return src('src/img/**.jpg')
         .pipe(imageMin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
@@ -44,10 +63,6 @@ function images() {
             optimizationLevel: 3 // 0 to 7
         }))
         .pipe(dest('docs/img/'))
-}
-
-function clear() {
-    return del(['./docs/'])
 }
 
 function serve() {
@@ -58,13 +73,9 @@ function serve() {
     watch('src/**.html', series(html)).on('change', sync.reload);
     watch('src/scss/**.scss', series(scss)).on('change', sync.reload);
     watch('src/img/**.png', series(images)).on('change', sync.reload);
+    watch('src/**.js', series(js)).on('change', sync.reload);
 }
 
-function icons() {
-    return src('node_modules/@fortawesome/fontawesome-free/webfonts/*')
-        .pipe(dest('./docs/webfonts/'));
-}
-
-exports.build = series(clear, scss, html, images);
-exports.serve = series(clear, icons, scss, html, images, serve);
+exports.build = series(clear, icons, fonts, js, scss, html, images);
+exports.serve = series(clear, icons, fonts, js, scss, html, images, serve);
 exports.clear = clear;
