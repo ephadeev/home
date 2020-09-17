@@ -1,0 +1,11 @@
+.header {
+  z-index: 999;
+
+  .header__background {
+    background-image: url("../img/blurred-1834820_1920.jpg");
+  }
+  .header__role {
+    color: #DD5044;
+    animation: color-changer 5s;
+  }
+}
