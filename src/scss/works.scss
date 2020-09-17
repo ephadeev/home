@@ -1,0 +1,129 @@
+.main {
+  .container {
+    .works {
+      height: 300vh;
+      width: 100%;
+      position: relative;
+
+      .works__container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 300%;
+        z-index: 990;
+
+        .works__background {
+          background-image: url("../img/bokeh-716587_1920.jpg");
+          animation: none;
+        }
+
+        .works__background--mirror {
+          transform: scale(-1, 1);
+        }
+
+        .works__converter {
+          position: absolute;
+          top: 170px;
+          left: 20%;
+          transform: translate3d(0, 70px, 150px);
+        }
+
+        .works__converter-image {
+          width: 275px;
+          overflow: hidden;
+          border-radius: 5px;
+        }
+
+        .works__axit {
+          position: absolute;
+          top: 170px;
+          left: 50%;
+          transform: translate3d(0, 70px, 150px);
+        }
+
+        .works__project-container {
+          position: relative;
+          margin-top: 20px;
+          width: 150px;
+          height: 200px;
+          overflow: hidden;
+          border-radius: 5px;
+          border: none;
+        }
+
+        .works__project {
+          position: absolute;
+          width: 150px;
+          top: 0;
+          left: 0;
+        }
+
+        .works__iread {
+          position: absolute;
+          top: 170px;
+          left: 20%;
+          transform: translate3d(0, 70px, 150px);
+        }
+
+        .works__iread-image {
+          width: 275px;
+          overflow: hidden;
+          border-radius: 5px;
+        }
+
+        .works_telegram {
+          position: absolute;
+          top: 170px;
+          left: 50%;
+          transform: translate3d(0, 70px, 150px);
+        }
+
+        .works__telegram-image {
+          width: 275px;
+          overflow: hidden;
+          border-radius: 5px;
+        }
+
+        .works__title {
+          font-size: 24px;
+          color: #DD5044;
+        }
+
+        .works__info {
+          margin-top: 5px;
+          font-size: 14px;
+          color: white;
+          max-width: 275px;
+          text-align: center;
+        }
+
+        .works__wrapper {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          display: flex;
+
+          .works__item {
+            width: 100vw;
+            height: 100vh;
+          }
+
+          .works__github {
+            position: absolute;
+            top: 170px;
+            left: 20%;
+            transform: translate3d(0, 70px, 150px);
+          }
+
+          .works__github-image {
+            width: 275px;
+            overflow: hidden;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -29,6 +29,7 @@ $blue-color: #708499;
 
   .container {
     width: 100%;
+    position: relative;
 
     .animation-container {
       height: 100vh;
@@ -59,22 +60,12 @@ $blue-color: #708499;
       animation-delay: 2.5s;
     }
 
-    .heading {
+    .titles {
       color: white;
       font-size: 25px;
       font-family: 'Playfair Display', serif;
-    }
-
-    .role {
-      color: #DD5044;
-      animation: color-changer 5s;
-    }
-
-    .works {
-      height: 100vh;
+      text-shadow: 1px 1px 5px black;
+    //  TODO: need to animate text-shadow in future
     }
   }
-
-
-
 }

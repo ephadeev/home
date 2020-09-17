@@ -1,0 +1,56 @@
+.main {
+  .container {
+    .about {
+      z-index: 998;
+
+      .about__background {
+        background-image: url("../img/lights-801894_1920.jpg");
+      }
+
+      .about__photo {
+        position: absolute;
+        top: 36%;
+        left: 25%;
+        width: 215px;
+        transform: translate3d(0px, 20px, 150px);
+        border-radius: 10px;
+        box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.5);
+        // filter: grayscale(100%);
+      }
+
+      .about__title {
+        position: absolute;
+        top: 215px;
+        left: 50%;
+        transform: translate3d(0, 70px, 150px);
+        color: white;
+        font-size: 25px;
+        font-family: 'Playfair Display', serif;
+      }
+
+      .about__contacts {
+        position: absolute;
+        top: 240px;
+        left: 50%;
+        transform: translate3d(0, 70px, 150px);
+      }
+
+      .about__text {
+        color: #DD5044;
+      }
+
+      .about__links {
+        color: white;
+      }
+
+      .about__cv {
+        margin-top: 1px;
+        color: white;
+        border: 2px solid white;
+        border-radius: 5px;
+        padding: 2px;
+        text-align: center;
+      }
+    }
+  }
+}
