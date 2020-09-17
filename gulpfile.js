@@ -55,7 +55,7 @@ function html() {
 }
 
 function images() {
-    return src('src/img/**.jpg')
+    return src('src/img/*')
         .pipe(imageMin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
