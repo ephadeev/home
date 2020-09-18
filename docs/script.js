@@ -1,11 +1,12 @@
 'use strict';
 
-const headingContainers = document.getElementsByClassName('heading-container');
+const headerTitle = document.getElementsByClassName('header__title')[0];
+const headerText = document.getElementsByClassName('header__text')[0];
 
 const project1 = document.getElementsByClassName('works__project')[0];
 
-const headingContainerPosition0 = headingContainers[0].offsetTop;
-const headingContainerPosition1 = headingContainers[1].offsetTop;
+const headerTitlePosition = headerTitle.offsetTop;
+const headerTextPosition = headerText.offsetTop;
 
 const header = document.getElementsByClassName('animation-container')[0];
 const positionOfHeaderBottom = header.offsetHeight;
@@ -19,9 +20,9 @@ const positionOfWorks = works.offsetTop;
 const worksWrapper = document.getElementsByClassName('works__wrapper')[0];
 
 window.addEventListener('scroll', () => {
-    if (pageYOffset + headingContainerPosition0 <= 460) {
-        headingContainers[0].style.top = `${Math.floor(pageYOffset) + headingContainerPosition0}px`;
-        headingContainers[1].style.top = `${Math.floor(pageYOffset) + headingContainerPosition1}px`;
+    if (pageYOffset + headerTitlePosition <= 460) {
+        headerTitle[0].style.top = `${Math.floor(pageYOffset) + headerTitlePosition}px`;
+        headerText[0].style.top = `${Math.floor(pageYOffset) + headerTextPosition}px`;
     }
 
     if (pageYOffset <= positionOfHeaderBottom && worksWrapper.style.left !== '0px') {

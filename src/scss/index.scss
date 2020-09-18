@@ -13,6 +13,15 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-Regular.woff2') format('woff2'),
+  url('Roboto-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 html, body {
   height: 100%;
 }
@@ -21,9 +30,24 @@ a {
   text-decoration: none;
 }
 
-$main-color: #17212b;
 $white-color: #f5f5f5;
-$blue-color: #708499;
+$accent-color: #DD5044;
+
+$font-playfair: 'Playfair Display', serif;
+$font-roboto: 'Roboto', sans-serif;
+
+body {
+  color: $white-color;
+  font-family: $font-playfair;
+}
+
+.font-playfair {
+  font-family: $font-playfair;
+}
+
+.font-roboto {
+  font-family: $font-roboto;
+}
 
 .main {
 
@@ -48,24 +72,11 @@ $blue-color: #708499;
       }
     }
 
-    .heading-container {
-      position: absolute;
-      top: 215px;
-      left: 40%;
-      transform: translate3d(0, 70px, 150px);
-    }
-
-    .transform2 {
-      top: 240px;
-      animation-delay: 2.5s;
-    }
-
     .titles {
-      color: white;
+      color: $white-color;
       font-size: 25px;
-      font-family: 'Playfair Display', serif;
       text-shadow: 1px 1px 5px black;
-    //  TODO: need to animate text-shadow in future
+      // TODO: need to animate text-shadow in future
     }
   }
 }

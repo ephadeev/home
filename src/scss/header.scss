@@ -1,9 +1,27 @@
+$accent-color: #DD5044;
+
 .header {
   z-index: 999;
 
   .header__background {
     background-image: url("../img/blurred-1834820_1920.jpg");
   }
+
+  .header__title {
+    position: absolute;
+    top: 215px;
+    left: 40%;
+    transform: translate3d(0, 70px, 150px);
+  }
+
+  .header__text {
+    position: absolute;
+    top: 240px;
+    left: 40%;
+    animation-delay: 2.5s;
+    transform: translate3d(0, 70px, 150px);
+  }
+
   .header__role {
     color: #DD5044;
     animation: color-changer 5s;

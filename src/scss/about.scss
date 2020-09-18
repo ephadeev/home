@@ -1,3 +1,6 @@
+$white-color: #f5f5f5;
+$accent-color: #DD5044;
+
 .main {
   .container {
     .about {
@@ -23,7 +26,7 @@
         top: 215px;
         left: 50%;
         transform: translate3d(0, 70px, 150px);
-        color: white;
+        color: $white-color;
         font-size: 25px;
         font-family: 'Playfair Display', serif;
       }
@@ -36,17 +39,17 @@
       }
 
       .about__text {
-        color: #DD5044;
+        color: $accent-color;
       }
 
       .about__links {
-        color: white;
+        color: $white-color;
       }
 
       .about__cv {
         margin-top: 1px;
-        color: white;
-        border: 2px solid white;
+        color: $white-color;
+        border: 2px solid $white-color;
         border-radius: 5px;
         padding: 2px;
         text-align: center;
