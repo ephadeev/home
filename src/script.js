@@ -21,8 +21,8 @@ const worksWrapper = document.getElementsByClassName('works__wrapper')[0];
 
 window.addEventListener('scroll', () => {
     if (pageYOffset + headerTitlePosition <= 460) {
-        headerTitle[0].style.top = `${Math.floor(pageYOffset) + headerTitlePosition}px`;
-        headerText[0].style.top = `${Math.floor(pageYOffset) + headerTextPosition}px`;
+        headerTitle.style.top = `${Math.floor(pageYOffset) + headerTitlePosition}px`;
+        headerText.style.top = `${Math.floor(pageYOffset) + headerTextPosition}px`;
     }
 
     if (pageYOffset <= positionOfHeaderBottom && worksWrapper.style.left !== '0px') {
